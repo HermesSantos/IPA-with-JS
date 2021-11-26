@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<title>Initial Page</title>	
+</head>
+
+<body>
+	<img src="" id="eye" width="450">
+	<script>
+		//it calls the function getEye() and look for some
+		//kind of error. If it is not, the code runs.
+		getEye()
+		.catch(error=>{
+			console.log("error");
+			alert(error);
+		})
+		//it shows an alert popup when the code runs well.
+		.then(response=>{
+			alert("Dit it!");
+		});
+		//This part gets a response that was made by fetching a jpg, then
+		//makes the jpg a blob showing, by the end, the blob on the screen.
+		async function getEye(){
+			const response = await fetch('olho.jpg');
+			const blob = await response.blob();
+			document.getElementById('eye').src = URL.createObjectURL(blob);
+		}
+		
+	</script>
+</body>
+</html>
