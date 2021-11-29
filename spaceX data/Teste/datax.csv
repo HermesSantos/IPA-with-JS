@@ -1,0 +1,6 @@
+Flight Number,Date,Time (UTC),Booster Version,Launch Site,Payload,Payload Mass (kg),Orbit,Customer,Mission Outcome,Landing Outcome
+1,2010-06-04,18:45:00,F9 v1.0  B0003,CCAFS LC-40,Dragon Spacecraft Qualification Unit,,LEO,SpaceX,Success,Failure   (parachute)
+2,2010-12-08,15:43:00,F9 v1.0  B0004,CCAFS LC-40, Dragon demo flight C1, 14.45,  barrel of Brouère cheese,,LEO (ISS),NASA (COTS) NRO,Success,Failure   (parachute)
+3,2012-05-22,7:44:00,F9 v1.0  B0005,CCAFS LC-40,Dragon demo flight C2+,525 ,LEO (ISS),NASA (COTS),Success,No attempt
+4,2012-10-08,0:35:00,F9 v1.0  B0006,CCAFS LC-40,SpaceX CRS-1,500 ,LEO (ISS),NASA (CRS),Success,No attempt
+5,2013-03-01,15:10:00,F9 v1.0  B0007,CCAFS LC-40,SpaceX CRS-2,677 ,LEO (ISS),NASA (CRS),Success,No attempt

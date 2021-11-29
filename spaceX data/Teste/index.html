@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+	  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+    <title>Coding Train: Data/APIs 1</title>
+  </head>
+  <body>
+	<h1>SpaceX Data</h1>
+	  <canvas id="myChart" width="5"></canvas>
+	
+    <script>
+		const xlabels = [];
+		const ylabels = [];
+
+		createChart();
+		async function createChart(){
+		await getData();
+		const ctx = document.getElementById('myChart').getContext('2d');
+		
+		const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: xlabels,
+        datasets: [{
+            label: 'Weight spaceX increse by years',
+            data: ylabels,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+		}
+
+	    async function getData(){
+		  const response = await fetch('datax.csv');
+		  const data = await response.text();
+		 // console.log(data);
+		  const table = data.split('\n').slice(1);
+		  table.forEach(row=>{
+			  const columns = row.split(',');
+			  const year = columns[1];
+			  xlabels.push(year);
+			  const weight = columns[6];
+			  ylabels.push(weight);
+			  console.log(year, weight);
+		  })
+	  }
+    </script>
+  </body>
+</html>
